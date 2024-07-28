@@ -15,9 +15,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class ReadAllDevicesController extends AbstractController
 {
+    #[IsGranted('ROLE_ADMIN')]
     #[Route('/read/all/devices', name: 'app_read_all_devices')]
     public function index(EntityManagerInterface $entityManager, Request $request): Response
     {

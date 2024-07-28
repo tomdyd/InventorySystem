@@ -9,9 +9,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class UpdateRolesController extends AbstractController
 {
+    #[IsGranted("ROLE_SUPER_ADMIN")]
     #[Route('/update-roles', name: 'app_update_roles')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
