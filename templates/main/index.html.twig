@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    <div class="form-container">
+        {{ form_start(form) }}
+        {{ form(form) }}
+        <datalist id="users-options">
+            {% if users is defined and users is not empty %}
+            {% for user in users %}
+            <option value="{{ user.name }} {{ user.surname }}">
+                {% endfor %}
+                {% endif %}
+        </datalist>
+        {{ form_end(form) }}
+    </div>
+
+    <div class="flex-center">
+        <div class="menu_bar">
+            <h3> Wybierz formularz</h3>
+            <div class="nav-table">
+                <a id="computer" href="{{ path('app_computer') }}" class="form_link"> Komputery </a>
+                <a id="printer" href="{{ path('app_printer') }}" class="form_link"> Drukarki </a>
+                <a id="monitor" href="{{ path('app_monitor') }}" class="form_link"> Monitor </a>
+                <a id="mouse_and_keyboard" href="{{ path('app_mouse_and_keyboard') }}" class="form_link"> Klawiatury i
+                    myszki </a>
+                <a id="scanner" href="{{ path('app_scanner') }}" class="form_link">Skanery </a>
+                <a id="phone" href="{{ path('app_phone') }}" class="form_link"> Telefon </a>
+                <a id="tablet" href="{{ path('app_tablet') }}" class="form_link"> Tablet</a>
+                <a id="terminal" href="{{ path('app_terminal') }}" class="form_link">Terminal</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ asset('js/currentURL.js') }}"
+{% endblock %}

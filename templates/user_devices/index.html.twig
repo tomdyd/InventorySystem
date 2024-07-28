@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UsernotebooksController!{% endblock %}
+
+{% block body %}
+    <h1 class="h1 username_header">{{ user.name }} {{ user.surname }}</h1>
+    <table class="device_list">
+        <thead>
+        <tr>
+            <th>Rodzaj urządzenia</th>
+            <th>Numer seryjny</th>
+            <th>Status</th>
+            <th>Model</th>
+            <th>Marka</th>
+            <th>Nazwa domeny</th>
+            <th>MAC adres LAN</th>
+            <th>MAC adres WLAN</th>
+            <th>IP</th>
+            <th>Loklizacja</th>
+            <th>Data przekazania</th>
+            <th>Użytkownik</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for notebook in notebooks %}
+            <tr>
+                <td>{{ notebook.deviceType.type }}</td>
+                <td>{{ notebook.serialNumber }}</td>
+                <td>{{ notebook.status }}</td>
+                <td>{{ notebook.model }}</td>
+                <td>{{ notebook.brand }}</td>
+                <td>{{ notebook.domainName }}</td>
+                <td>{{ notebook.macAddressLAN }}</td>
+                <td>{{ notebook.macAddressWIFI }}</td>
+                <td>{{ notebook.IP }}</td>
+                <td>{{ notebook.Localization }}</td>
+                <td>{{ notebook.dateFrom|date('d-m-Y') }}</td>
+                <td>
+                    <a href="{{ path('app_user_devices', {'id': notebook.user.id}) }}">{{ notebook.user.name }} {{ notebook.user.surname }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+    {% if phones is not empty %}
+    <table class="device_list">
+        <thead>
+        <tr>
+            <th>Rodzaj urządzenia</th>
+            <th>NUmber IMEI</th>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>MAC adres WLAN</th>
+            <th>PIN</th>
+            <th>PUK</th>
+            <th>Użytkownik</th>
+        </tr>
+        </thead>
+        {% for phone in phones %}
+            <tr>
+                <td>{{ phone.deviceType.type}}</td>
+                <td>{{ phone.imeiNumber }}</td>
+                <td>{{ phone.Brand }}</td>
+                <td>{{ phone.Model }}</td>
+                <td>{{ phone.macAddressWIFI }}</td>
+                <td>{{ phone.PIN }}</td>
+                <td>{{ phone.PUK }}</td>
+                <td>
+                    <a href="{{ path('app_user_devices', {'id': phone.user.id}) }}">{{ phone.user.name }} {{ phone.user.surname }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    {% if monitors is not empty %}
+        <table class="device_list">
+            <thead>
+            <tr>
+                <th>Rodzaj urządzenia</th>
+                <th>Number seryjny</th>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>Użytkownik</th>
+                <th>Lokalizacja</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for monitor in monitors %}
+                <tr>
+                    <td>{{ monitor.deviceType.type }}</td>
+                    <td>{{ monitor.serialNumber }}</td>
+                    <td>{{ monitor.brand }}</td>
+                    <td>{{ monitor.model }}</td>
+                    <td>{{ monitor.localization.address }}</td>
+                    <td>
+                        <a href="{{ path('app_user_devices', {'id': monitor.user.id}) }}">{{ monitor.user.name }} {{ monitor.user.surname }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% if miceAndKeyboards is not empty %}
+            <table class="device_list">
+                <thead>
+                <tr>
+                    <th>Rodzaj urządzenia</th>
+                    <th>Number seryjny</th>
+                    <th>Marka</th>
+                    <th>Model</th>
+                    <th>Użytkownik</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for mouseAndKeyboard in miceAndKeyboards %}
+                    <tr>
+                        <td>{{ mouseAndKeyboard.deviceType.type }}</td>
+                        <td>{{ mouseAndKeyboard.serialNumber }}</td>
+                        <td>{{ mouseAndKeyboard.brand }}</td>
+                        <td>{{ mouseAndKeyboard.model }}</td>
+                        <td>
+                            <a href="{{ path('app_user_devices', {'id': mouseAndKeyboard.user.id}) }}">{{ mouseAndKeyboard.user.name }} {{ mouseAndKeyboard.user.surname }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endif %}
+{% endblock %}

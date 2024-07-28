@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UpdateRolesController!{% endblock %}
+
+{% block body %}
+    <div class="form-container">
+        {{ form_start(form) }}
+        <datalist id="users-options">
+            {% if users is defined and users is not empty %}
+            {% for user in users %}
+            <option value="{{ user.name }} {{ user.surname }}">
+                {% endfor %}
+                {% endif %}
+        </datalist>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

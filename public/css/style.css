@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+.h1{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.h3 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.main_section {
+    display: flex;
+    height: calc(100vh - 7rem);
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile {
+    width: 50rem;
+    height: 50rem;
+    text-align: center;
+    line-height: 50rem;
+
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    font-size: 3.6rem;
+    text-decoration: none;
+    color: #000;
+}
+
+.tile:hover {
+    background-color: #eee;
+    transition: .5s;
+    cursor: pointer;
+
+}
+
+.tile p {
+    font-size: 3.6rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    background-color: #f9f9f9;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form select, form input[type="password"],
+form input[type="date"], button [type="submit"] {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+label {
+    font-size: 1.6rem;
+}
+
+form input[type="submit"], .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #757575;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #8a8a8a;
+    transition: .5s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #919191;
+}
+
+select option[value="enabled"] {
+    background-color: #d4edda;
+    color: #33c956;
+}
+
+select option[value="disabled"] {
+    background-color: #f8d7da;
+    color: #b43340;
+}
+
+.menu_bar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    bottom: 0;
+    width: 90%;
+    height: 125px;
+    border-top: 1px solid #bbb;
+    background-color: #fff;
+
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-container {
+    padding: 20px;
+    height: calc(100vh - 175px);
+    overflow-y: scroll;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_link {
+    display: block;
+    background-color: #55bb5a;
+    width: 20rem;
+    height: 5rem;
+    text-align: center;
+    line-height: 5rem;
+
+    color: #fff;
+    font-size: 1.6rem;
+    text-decoration: none;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.nav-table a:hover {
+    background-color: #4BAF50;
+    transition: background-color 0.3s ease;
+}
+
+.menu_bar h3{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+select option{
+    font-size: 1.6rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.active{
+    background-color: #388E3C;
+}
+
+.header_tools{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.1rem solid #000;
+
+    height: 3rem;
+}
+
+.header_tools a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1.6rem;
+}
+
+.user_panel, .user_panel a{
+    display: flex;
+    gap: 3rem;
+
+    font-size: 1.6rem;
+}
+
+.back_to_home_button{
+    display: block;
+
+}
+
+.device_list {
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 5rem auto;
+}
+
+.device_list th, td{
+    font-size: 1.6rem;
+    text-align: center;
+    width: 15rem;
+    padding: 1rem 0;
+    border: 1px solid #000
+}
+
+td a{
+    display: block;
+    width: 15rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #000;
+}
+
+td a:hover{
+    color: #a9a9a9;
+}
+
+.username_header{
+    margin-top: 5rem;
+}

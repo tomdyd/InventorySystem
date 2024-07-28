@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <section class="main_section">
+        {% if is_granted('ROLE_ADMIN') %}
+        <a class="tile" href="{{ path('app_computer') }}">
+            Zarejestruj urządzenie
+        </a>
+
+        <a class="tile" href="{{ path('app_read_all_devices') }}">
+            Pokaż wszystkie urządzenia
+        </a>
+        {% endif %}
+
+        {% if app.user %}
+        <a class="tile" href="{{ path('app_user_devices', {'id': app.user.id}) }}">
+            Pokaż moje urządzenia
+        </a>
+        {% endif %}
+    </section>
+{% endblock %}

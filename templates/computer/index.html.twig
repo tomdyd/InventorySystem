@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ComputerController!{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form(form) }}
+    <datalist id="person-options">
+        {% for person in persons %}
+        <option value="{{ person.name }} {{ person.surname }}">
+            {% endfor %}
+    </datalist>
+    {{ form_end(form) }}
+{% endblock %}
